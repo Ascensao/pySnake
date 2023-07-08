@@ -4,13 +4,15 @@ Welcome to the PySnake Game 🐍 In this repository, you will find my version of
 
 ## About the Game
 
-Snake is a simple yet engaging game where the player maneuvers a line (the snake) which grows in length with each point or "food" it consumes. The primary objective of the game is to control the snake and help it eat as much food as possible. However, the game ends if the snake collides with the game boundary or with its own tail. This Python version of Snake aims to recapture the thrill and excitement of the classic game.
+Snake is a simple yet engaging game where the player maneuvers a line "the snake" with the ⬅️⬆️➡️⬇️ Keys from the keyboard which grows in length with each point or "food" it consumes. The primary objective of the game is to control the snake and help it eat as much food as possible. However, the game ends if the snake collides with its own tail. This Python version of Snake aims to recapture the thrill and excitement of the classic game.
 
 ## How to Run the Game
 
-1. ```git clone https://github.com/Ascensao/pySnake.git```
-2. ```cd pySnake```
-3. ```python main.py```
+```
+1. git clone https://github.com/Ascensao/pySnake.git
+2. cd pySnake
+3. python main.py
+```
 
 ## Features
 
@@ -26,4 +28,4 @@ Contributions are more than welcome! Please fork the repository and create a Pul
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the Apache License - see the [LICENSE](LICENSE) file for details.
