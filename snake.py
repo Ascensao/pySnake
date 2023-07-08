@@ -1,4 +1,3 @@
-# snake.py
 import pygame
 from pygame import Rect
 from settings import Settings

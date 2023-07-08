@@ -1,4 +1,3 @@
-# gamestate.py
 import pygame
 import sys
 from snake import Snake
@@ -9,7 +8,7 @@ class GameState:
         self.settings = settings
         self.snake = Snake()
         self.food = Food()
-        self.game_over = False  # Add this line
+        self.game_over = False
 
     def check_events(self):
         for event in pygame.event.get():
@@ -36,11 +35,18 @@ class GameState:
         screen.fill(self.settings.bg_color)
         self.snake.draw(screen)
         self.food.draw(screen)
-        if self.game_over:  # Add this block
+        self.draw_score(screen)
+        if self.game_over:
             font = pygame.font.Font(None, 36)
             text = font.render("You Lost", True, (255, 255, 255))
             text_rect = text.get_rect(center=(self.settings.screen_width // 2, self.settings.screen_height // 2))
             screen.blit(text, text_rect)
+
+    def draw_score(self, screen): 
+        font = pygame.font.Font(None, 36)
+        score = self.snake.length - 1  # Calculate score as snake length - 1
+        text = font.render(f"Score: {score}", True, (255, 255, 255))
+        screen.blit(text, (self.settings.screen_width - 120, 20))  # Display score in the top right corner
 
     def reset(self):
         self.snake.reset()

@@ -1,4 +1,3 @@
-# main.py
 import pygame
 from settings import Settings
 from gamestate import GameState
