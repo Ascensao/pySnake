@@ -9,6 +9,7 @@ class GameState:
         self.settings = settings
         self.snake = Snake()
         self.food = Food()
+        self.game_over = False  # Add this line
 
     def check_events(self):
         for event in pygame.event.get():
@@ -29,6 +30,19 @@ class GameState:
         if self.snake.segments[0].colliderect(self.food.rect):
             self.snake.grow()
             self.food = Food()
+        for segment in self.snake.segments[1:]:  # Check for collision with self
+            if self.snake.segments[0].colliderect(segment):
+                self.game_over = True  # Set game over to True if collision with self
         screen.fill(self.settings.bg_color)
         self.snake.draw(screen)
         self.food.draw(screen)
+        if self.game_over:  # Add this block
+            font = pygame.font.Font(None, 36)
+            text = font.render("You Lost", True, (255, 255, 255))
+            text_rect = text.get_rect(center=(self.settings.screen_width // 2, self.settings.screen_height // 2))
+            screen.blit(text, text_rect)
+
+    def reset(self):
+        self.snake.reset()
+        self.food.reset()
+        self.game_over = False

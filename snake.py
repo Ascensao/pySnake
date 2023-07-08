@@ -41,3 +41,8 @@ class Snake:
     def draw(self, screen):
         for segment in self.segments:
             pygame.draw.rect(screen, self.settings.snake_color, segment)
+
+    def reset(self):
+        self.length = 1
+        self.segments = [Rect(self.settings.screen_width // 2, self.settings.screen_height // 2, self.settings.snake_size, self.settings.snake_size)]
+        self.direction = 'right'

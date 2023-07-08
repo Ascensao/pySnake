@@ -10,7 +10,7 @@ Snake is a simple yet engaging game where the player maneuvers a line (the snake
 
 1. ```git clone https://github.com/Ascensao/pySnake.git```
 2. ```cd pySnake```
-3. ```python pySnake.py```
+3. ```python main.py```
 
 ## Features
 

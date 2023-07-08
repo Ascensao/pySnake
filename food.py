@@ -16,3 +16,6 @@ class Food:
 
     def draw(self, screen):
         pygame.draw.rect(screen, self.settings.food_color, self.rect)
+
+    def reset(self):
+        self.rect = self.place_food()
